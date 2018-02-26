@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Add the xmlns:fresh line and use it to resolve the fresh:FreshBaseContentPage declaration -->
+<fresh:FreshBaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                            x:Class="MealSchedule.Pages.FoodItemListPage"
+                            xmlns:fresh="clr-namespace:FreshMvvm;assembly=MealSchedule">
+      <fresh:FreshBaseContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddFoodItemCommand}" />
+      </fresh:FreshBaseContentPage.ToolbarItems>
+
+    <StackLayout>
+        <Label FontAttributes="Bold" HorizontalOptions="CenterAndExpand">Food items</Label>
+
+        <Label Text="{Binding HowManyItems}"></Label>
+        <ListView ItemsSource="{Binding FoodItems}" SelectedItem="{Binding SelectedFoodItem}" x:Name="lstFoodItems">
+            <ListView.ItemTemplate >
+              <DataTemplate>
+                <TextCell Text="{Binding Name}" Detail="{Binding Name}" />
+              </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+  
+</fresh:FreshBaseContentPage>

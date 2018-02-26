@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fresh:FreshBaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                            x:Class="MealSchedule.Pages.FoodItemPage"
+                            xmlns:fresh="clr-namespace:FreshMvvm;assembly=MealSchedule">
+	<ContentPage.Content>
+        <StackLayout Padding="15" Spacing="5">
+          <Label Text="Food item" />
+          <Entry Text="{Binding FoodItemName}" />
+          <Button Text="Save" Command="{Binding SaveCommand}" />
+        </StackLayout>
+	</ContentPage.Content>
+</fresh:FreshBaseContentPage>
