@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fresh:FreshBaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                            x:Class="MealSchedule.Pages.NowPage"
+                            xmlns:fresh="clr-namespace:FreshMvvm;assembly=MealSchedule"
+                            Title = "{Binding Day}">
+	<ContentPage.Content>
+        <RelativeLayout BackgroundColor="Black">
+            <!--<Label HorizontalOptions="Center" VerticalOptions="Start" Text="{Binding Day}"></Label>-->
+            <Image Source="{Binding backgroundIMG}" />
+            <Label Text="{Binding MealTime}" TextColor="White" 
+                   HorizontalOptions="FillAndExpand"
+                   FontSize="30" HorizontalTextAlignment="Center" WidthRequest="400" ></Label>
+            <Frame RelativeLayout.XConstraint="50" RelativeLayout.YConstraint="200"
+                   Padding="2">
+                <StackLayout Padding="0" Spacing="0">
+                    <ListView ItemsSource="{Binding FoodItems}" WidthRequest="270"
+                    x:Name="LVFoodItems" HeightRequest="{Binding FoodItemsCount}"
+                    IsPullToRefreshEnabled="false"></ListView>
+                    <StackLayout Padding="10" BackgroundColor="Silver">
+                        <Label Text="Instructions" FontSize="20" />
+                    <Label FontSize="10">
+                        <Label.Text>
+                            - Mix it in water
+- Add salt to it
+- And so on
+                        </Label.Text>
+                    </Label>
+                    
+                    </StackLayout>
+
+                </StackLayout>
+
+
+            </Frame>
+                          
+        </RelativeLayout>
+	</ContentPage.Content>
+</fresh:FreshBaseContentPage>

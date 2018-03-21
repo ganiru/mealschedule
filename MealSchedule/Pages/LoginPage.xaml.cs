@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using Xamarin.Forms;
+
 using FreshMvvm;
 using MealSchedule.PageModels;
 
 namespace MealSchedule.Pages
 {
-    public partial class FoodItemListPage : FreshBaseContentPage
+    public partial class LoginPage : FreshBaseContentPage
     {
-        public FoodItemListPage()
+        public LoginPage()
         {
             InitializeComponent();
-            BindingContext = new FoodItemListPageModel();
+            BindingContext = new LoginPageModel();
         }
     }
 }

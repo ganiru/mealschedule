@@ -57,5 +57,26 @@ namespace MealSchedule.PageModels
                 });
             }
         }
+
+        /// <summary>
+        /// Delete the item
+        /// </summary>
+        /// <value>The delete command.</value>
+        public ICommand DeleteCommand
+        {
+            get
+            {
+                return new Command(async () =>
+                {
+                    var yesorno = await Application.Current.MainPage.DisplayAlert("Delete?", $"Are you sure you want to delete {_fooditem.Name}?", "Yes, delete it","No, keep it");
+
+                    if (yesorno)
+                    {
+                        await _repository.DeleteFoodItem(_fooditem);
+                        await CoreMethods.PopPageModel(_fooditem);
+                    }
+                });
+            }
+        }
     }
 }

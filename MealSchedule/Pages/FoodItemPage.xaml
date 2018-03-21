@@ -7,7 +7,10 @@
         <StackLayout Padding="15" Spacing="5">
           <Label Text="Food item" />
           <Entry Text="{Binding FoodItemName}" />
-          <Button Text="Save" Command="{Binding SaveCommand}" />
+            <StackLayout Orientation="Horizontal" Padding="10">
+                <Button Text="Delete" Command="{Binding DeleteCommand}" />
+                <Button Text="Save" Command="{Binding SaveCommand}" />
+            </StackLayout>
         </StackLayout>
 	</ContentPage.Content>
 </fresh:FreshBaseContentPage>

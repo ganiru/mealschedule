@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fresh:FreshBaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                            x:Class="MealSchedule.Pages.DayPage"
+                            xmlns:fresh="clr-namespace:FreshMvvm;assembly=MealSchedule" Title="Today">
+	<ContentPage.Content>
+        <StackLayout x:Name="slLayout" Spacing="0" BackgroundColor="Black">
+            <RelativeLayout VerticalOptions="Start" HorizontalOptions="Center" Margin="0">
+                <Image x:Name="breakfastBG" Source="morningcoffee.jpg"></Image>
+                <RelativeLayout x:Name="breakfastLayout" RelativeLayout.YConstraint="50" RelativeLayout.XConstraint="50" WidthRequest="200" HorizontalOptions="CenterAndExpand" Padding="10">
+                    <Label Text="Akamu and Akara" TextColor="White" FontSize="13" RelativeLayout.XConstraint="50" RelativeLayout.YConstraint="10"></Label>    
+                </RelativeLayout>
+            </RelativeLayout>
+            
+            <RelativeLayout>
+                 <Label HorizontalOptions="Center" VerticalOptions="Start" Text="Morning snack" TextColor="White"></Label>
+            </RelativeLayout>
+            
+            <RelativeLayout VerticalOptions="StartAndExpand" HorizontalOptions="Center">
+                <Image x:Name="lunchBG" Source="jollof.jpg"></Image>
+                <Label VerticalTextAlignment="Start" RelativeLayout.XConstraint="150" Text="Lunch" TextColor="White" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" FontSize="15"></Label>
+                <RelativeLayout x:Name="lunchLayout" WidthRequest="150" Padding="10" RelativeLayout.YConstraint="50" RelativeLayout.XConstraint="50">
+                    <Label Text="Jollof rice" RelativeLayout.XConstraint="50" RelativeLayout.YConstraint="10" TextColor="White" FontSize="13"></Label>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout>
+                 <Label HorizontalOptions="Center" VerticalOptions="Start" Text="Afternoon snack" TextColor="White"></Label>
+            </RelativeLayout>
+            
+            <RelativeLayout VerticalOptions="StartAndExpand" HorizontalOptions="Center">
+                <Image x:Name="dinnerBG" Source="fish_beans_plantain.jpg"></Image>
+                <Label VerticalTextAlignment="Start" RelativeLayout.XConstraint="150" Text="Dinner" TextColor="White" FontAttributes="Bold" VerticalOptions="Start" HorizontalOptions="Center" FontSize="15"></Label>
+                <RelativeLayout x:Name="dinnerLayout" WidthRequest="500" Padding="10">
+                    <Label Text="Akamu and Akara" RelativeLayout.XConstraint="80" RelativeLayout.YConstraint="100" TextColor="White" FontSize="13"></Label>
+                </RelativeLayout>
+            </RelativeLayout>
+        </StackLayout>
+	</ContentPage.Content>
+</fresh:FreshBaseContentPage>

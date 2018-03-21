@@ -13,11 +13,11 @@
         <Label FontAttributes="Bold" HorizontalOptions="CenterAndExpand">Food items</Label>
 
         <Label Text="{Binding HowManyItems}"></Label>
-        <ListView ItemsSource="{Binding FoodItems}" SelectedItem="{Binding SelectedFoodItem}" x:Name="lstFoodItems">
+        <ListView ItemsSource="{Binding Fooditems}" SelectedItem="{Binding SelectedFoodItem}">
             <ListView.ItemTemplate >
               <DataTemplate>
-                <TextCell Text="{Binding Name}" Detail="{Binding Name}" />
-              </DataTemplate>
+                <TextCell Text="{Binding Name}" />
+               </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>

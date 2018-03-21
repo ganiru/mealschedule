@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MealSchedule.Pages.WeekPage" Title="Week View"
+             BackgroundColor="Color.Silver">
+    <ContentPage.Content>
+        
+        <Grid x:Name="grdWeek" ColumnSpacing="1" RowSpacing="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!--
+            <Label Text="Sunday" Style="{StaticResource styleDay}" Grid.Row="0" Grid.Column="1" />
+            <Label Text="Monday" Style="{StaticResource styleDay}" Grid.Row="0" Grid.Column="2" />
+            <Label Text="Tuesday" Style="{StaticResource styleDay}" Grid.Row="0" Grid.Column="3" />
+            <Label Text="Wednesday" Style="{StaticResource styleDay}" Grid.Row="0" Grid.Column="4" />
+            <Label Text="Thursday" Style="{StaticResource styleDay}" Grid.Row="0" Grid.Column="5" />
+            <Label Text="Friday" Style="{StaticResource styleDay}" Grid.Row="0" Grid.Column="6" />
+            <Label Text="aaSaturday" Style="{StaticResource styleDay}" Grid.Row="0" Grid.Column="7" />
+
+            <Label Text="Breakfast" Grid.Row="1" Grid.Column="0" />
+            <Label Text="Morning snacks" Grid.Row="2" Grid.Column="0" />
+            <Label Text="Lunch" Grid.Row="3" Grid.Column="0" />
+            <Label Text="Afternoon snacks" Grid.Row="4" Grid.Column="0" />
+            <Label Text="Dinner" Grid.Row="5" Grid.Column="0" />
+            -->
+        </Grid>
+	</ContentPage.Content>
+</ContentPage>

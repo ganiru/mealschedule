@@ -6,16 +6,21 @@ namespace MealSchedule.Models
     /// <summary>
     /// Linking food items to each meal
     /// </summary>
-    [Table(nameof(MealFoodItem))]
-    public class MealFoodItem
+    [Table(nameof(MealItems))]
+    public class MealItems
     {
         [PrimaryKey, AutoIncrement]
         public int? Id { get; set; }
 
         [NotNull]
-        public string MealId { get; set; }
+        public int MealInfoId { get; set; }
 
         [NotNull]
-        public string FoodItemId { get; set; }
+        public int FoodItemId { get; set; }
+
+        public bool IsValid()
+        {
+            return ((MealInfoId > 0) && (FoodItemId > 0));
+        }
     }
 }

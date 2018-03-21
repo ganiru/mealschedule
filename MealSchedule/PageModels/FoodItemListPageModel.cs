@@ -15,12 +15,13 @@ namespace MealSchedule.PageModels
         private readonly Repository _repository = FreshIOC.Container.Resolve<Repository>();
         private FoodItem _selectedFoodItem = null;
 
-
         /// <summary>
         /// Collection for binding to the pages food item list view
         /// </summary>
         /// <value>The fooditems.</value>
         public ObservableCollection<FoodItem> Fooditems { get; private set; }
+        public List<FoodItem> FoodItemList { get; private set; }
+        public string HowManyItems { get => Fooditems.Count().ToString(); set { HowManyItems = value; } }
 
 
 
@@ -44,6 +45,7 @@ namespace MealSchedule.PageModels
         public FoodItemListPageModel()
         {
             Fooditems = new ObservableCollection<FoodItem>();
+            FoodItemList = new List<FoodItem>();
         }
 
 
@@ -56,11 +58,7 @@ namespace MealSchedule.PageModels
             LoadFoodItems();
             System.Diagnostics.Debug.WriteLine("Food items loaded. Count: " + Fooditems.Count());
 
-            if (!Fooditems.Any())
-            {   //System.Diagnostics.Debug.WriteLine("Go and create Sample");
-                CreateSampleData();
-                //System.Diagnostics.Debug.WriteLine("Sample has been created");
-            }
+            if (!Fooditems.Any()) CreateSampleData();
         }
 
         /// <summary>
@@ -105,7 +103,6 @@ namespace MealSchedule.PageModels
             }
         }
 
-        public string HowManyItems => Fooditems.Count().ToString();
 
 
 
@@ -114,18 +111,26 @@ namespace MealSchedule.PageModels
         /// Note: For simplicity, we wait for the async db call to complete,
         /// recommend making better use of the async potential.
         /// </summary>
-        private void LoadFoodItems()
+        private async void LoadFoodItems()
         {
             Fooditems.Clear();
+
             Task<List<FoodItem>> getFoodItemsTask = _repository.GetAllFoodItems();
             getFoodItemsTask.Wait();
-            System.Diagnostics.Debug.WriteLine("Loading food start");
+
             foreach (var item in getFoodItemsTask.Result)
             {
                 Fooditems.Add(item);
-                System.Diagnostics.Debug.WriteLine("Add item " + item.Name.ToString());
+            }
+
+            System.Diagnostics.Debug.WriteLine("Loading food start");
+            foreach(var each in await _repository.GetAllFoodItems())
+            {
+                FoodItemList.Add(each);
+                System.Diagnostics.Debug.WriteLine("Add item " + each.Name.ToString());
             }
             System.Diagnostics.Debug.WriteLine("Loading food end");
+            HowManyItems = Fooditems.Count().ToString() + " food items";
         }
 
 

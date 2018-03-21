@@ -5,7 +5,6 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E1BC4DF6-98EF-483C-A5B7-2C609026AADD}</ProjectGuid>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <UseMSBuildEngine>true</UseMSBuildEngine>
     <OutputType>Library</OutputType>
     <RootNamespace>MealSchedule</RootNamespace>
     <AssemblyName>MealSchedule</AssemblyName>
@@ -30,19 +29,27 @@
   <ItemGroup>
     <EmbeddedResource Include="App.xaml" />
     <EmbeddedResource Include="MealSchedulePage.xaml" />
-    <EmbeddedResource Include="RightNowPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pages\FoodItemPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\FoodItemListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\NowPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\DayPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\WeekPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -55,15 +62,9 @@
       <DependentUpon>MealSchedulePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RightNowPage.xaml.cs">
-      <DependentUpon>RightNowPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="LoginPage.xaml.cs">
-      <DependentUpon>LoginPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Models\FoodItem.cs" />
-    <Compile Include="Models\Meal.cs" />
-    <Compile Include="Models\MealFoodItem.cs" />
+    <Compile Include="Models\MealInfo.cs" />
+    <Compile Include="Models\MealItems.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="PageModels\FoodItemPageModel.cs" />
     <Compile Include="Pages\FoodItemPage.xaml.cs">
@@ -73,6 +74,25 @@
     <Compile Include="Pages\FoodItemListPage.xaml.cs">
       <DependentUpon>FoodItemListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageModels\LoginPageModel.cs" />
+    <Compile Include="Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Pages\NowPage.xaml.cs">
+      <DependentUpon>NowPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\DayPage.xaml.cs">
+      <DependentUpon>DayPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageModels\DayPageModel.cs" />
+    <Compile Include="PageModels\WeekPageModel.cs" />
+    <Compile Include="Pages\WeekPage.xaml.cs">
+      <DependentUpon>WeekPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageModels\NowPageModel.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Models\MealDayTypes.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FreshIOC">

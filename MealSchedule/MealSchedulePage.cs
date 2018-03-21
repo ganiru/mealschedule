@@ -7,7 +7,7 @@ namespace MealSchedule
         async void ContinueAsGuest(object sender, System.EventArgs e)
         {
             //    this.DisplayAlert("Continuing as a guest", "You will proceed as a guest. Nothing special here!!", "Cancel");//throw new NotImplementedException();
-            await Navigation.PushAsync(new RightNowPage());
+            await Navigation.PushAsync(new Pages.NowPage());
         }
 
         public MealSchedulePage()

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<fresh:FreshBaseContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                            x:Class="MealSchedule.Pages.LoginPage"
+                            xmlns:fresh="clr-namespace:FreshMvvm;assembly=MealSchedule">
+    <!--<Label Text="Welcome to Xamarin Forms!" VerticalOptions="Center" HorizontalOptions="Center" />-->
+    <ContentPage.Content>
+        <StackLayout Padding="20" Spacing="20" VerticalOptions="CenterAndExpand" x:Name="layout">
+            <Button Text="Sign in with Facebook" VerticalOptions="Start"
+                BackgroundColor="Navy" HorizontalOptions="FillAndExpand" Command="{Binding ContinueAsGuestCommand}"
+            TextColor="White" x:Name="btnFacebook" />
+            <Button Text="Sign in with Google" Command="{Binding ContinueAsGuestCommand}"
+                BackgroundColor="Red" 
+            TextColor="White" x:Name="btnGoogle" />
+            <Button Text="Continue as guest" Command="{Binding ContinueAsGuestCommand}"
+                BackgroundColor="Gray"  
+            TextColor="White" x:Name="btnGuest" />
+        </StackLayout>
+    </ContentPage.Content>
+</fresh:FreshBaseContentPage>
